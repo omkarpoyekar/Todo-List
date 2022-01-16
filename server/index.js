@@ -45,13 +45,11 @@ app.get('/all',async(req,res)=>{
     })
 
   app.put('/update',async(req,res)=>{
-      console.log(req.body)
       
     try{
     const r=await Todo.findOneAndUpdate({name:req.body.todo.name},{
           completed:req.body.completed
       })
-      console.log(r)
       res.status(200).json({result:'success'})
     }
     catch(e){
@@ -62,11 +60,9 @@ app.get('/all',async(req,res)=>{
   })  
 
   app.post('/delete',async(req,res)=>{
-    console.log(req.body)
     
   try{
   const r=await Todo.findOneAndDelete({name:req.body.todo.name})
-    console.log(r)
     res.status(200).json({result:'success'})
   }
   catch(e){
@@ -77,7 +73,6 @@ app.get('/all',async(req,res)=>{
 })  
 
 app.delete('/delete',async(req,res)=>{
-    console.log(req.body)
     
   try{
   await Todo.remove({completed:true})

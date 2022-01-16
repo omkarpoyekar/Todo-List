@@ -20,7 +20,6 @@ const [list,setList]=useState([])
 
 useEffect(()=>{ 
 axios.get('/all').then(res=>{ 
-  console.log(res)
   setList(res.data.result)
 })
 
@@ -67,7 +66,7 @@ const HandleCompletedRemove=async(v)=>{
         { 
           list.map((v)=>(
             <div>
-            {console.log(v)}
+            
            <InputGroup className="mb-2 bordered group" >
     <InputGroup.Checkbox checked={v.completed?true:false} onChange={(e)=>handleCheckbox(v,e)} aria-label="Checkbox for following text input" />
     <h5 className={v.completed?"p-2 strike":"p-2"}>{v.name} </h5>
