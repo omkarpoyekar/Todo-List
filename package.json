@@ -5,10 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build":"cd client && npm run build ",
-    "install_client":"cd client && npm install ",
-
-    "heroku-postbuild":"npm run install_client && npm run build ",
+    "build": "cd client && npm run build ",
+    "install_client": "cd client && npm install ",
+    "heroku-postbuild": "npm run install_client && npm run build ",
     "start": "node index.js"
   },
   "author": "",
@@ -17,5 +16,8 @@
     "dotenv": "^12.0.3",
     "express": "^4.17.2",
     "mongoose": "^6.1.6"
+  },
+  "devDependencies": {
+    "mini-css-extract-plugin": "2.4.5"
   }
 }
